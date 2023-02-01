@@ -17,10 +17,10 @@ api.get(`channels?token=${session.connectUser.token}`).then(conversations => {
     conversations.forEach(conv => {
         api.get(`channels/${conv.id}/posts?token=${session.connectUser.token}`).then(msg => {
             data.messages.push(...msg)
-            data.messages.filter(function( element ) {
-                return element.member_id == session.connectUser.id;
+            data.messages = data.messages.filter(function( element ) {
+                return element.member_id === session.connectUser.member.id;
             })
-            data.messages.sort((a, b)=>{
+            data.messages = data.messages.sort((a, b)=>{
                 return  new Date(a.created_at).getTime() > new Date(b.created_at).getTime() ? -1 : 1;
             })
 

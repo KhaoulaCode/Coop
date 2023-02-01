@@ -1,0 +1,14 @@
+@import "../../utils/mixins.scss";
+@import "../../utils/variables.scss";
+.coop-comment-field{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    padding: map-get($spacing-mobile, "m" );
+    background-color: map-get($colors, "background" );
+    input{
+        width: 90%;
+    }
+}

@@ -250,7 +250,7 @@ body {
   }
 
   .bi-primary-paragraph,
-  p {
+  a, p {
     font-family: "InterTight-Regular";
     font-size: map-get($fonts-sizes-desktop, "paragraph");
     line-height: map-get($fonts-sizes-desktop, "paragraph-line");
@@ -299,6 +299,9 @@ body {
 
   .bi-input-text,
   input {
+    padding: map-get($spacing-short , "xxxl" );
+    border: gray 0.5px solid;
+    border-radius: 64px;
     font-family: "GTWalsheimPro-Regular";
     font-size: map-get($fonts-sizes-desktop, "input_text");
     line-height: map-get($fonts-sizes-desktop, "input_text-line");

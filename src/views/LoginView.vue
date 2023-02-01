@@ -1,5 +1,6 @@
 <script setup>
 import {useSessionStore} from '../stores/session.js'
+import Button from "../components/atoms/Button.vue"
 const session = useSessionStore()
 let mail = "boulhdir@gmail.com"
 let pass = 'azertyuiop'
@@ -11,14 +12,17 @@ const LoginUser = ()=>{
 </script>
 
 <template>
-    <h1>Coop 2022</h1>
-    <h2>Se connecter</h2>
+    <h1>Se connecter</h1>
     <form class="col is-offset-4" @submit.prevent="LoginUser">
         <label for="email">Email : </label>
         <input type="text" id="email" v-model="mail" placeholder="Mail"/><br/>
         <label for="password">Mot de passe : </label>
         <input type="password" id="password" v-model="pass" placeholder="Mot de passe"/><br/>
-        <button type="submit">Se connecter</button><br/>
+        <Button
+          type="submit"
+          content="Se connecter"
+          :callBack="LoginUser"
+        /> 
         <RouterLink to="/register">Créer un compte</RouterLink>
         
     </form>

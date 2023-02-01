@@ -1,0 +1,15 @@
+@import "../../utils/variables.scss";
+@import "../../utils/mixins.scss";
+
+.coop-button {
+    padding: map-get($spacing-short , "xxxl" );
+    border: gray 0.5px solid;
+    border-radius: 64px;
+    transition: 300ms;
+    &:hover {
+        background-color: rgb(0, 123, 255);
+        border: rgb(115, 190, 192) 0.5px solid;
+        color: map-get($brands-primary, "white");
+        cursor: pointer;
+    }
+}

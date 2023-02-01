@@ -22,9 +22,7 @@ const session = useSessionStore()
 
 <template>
     <div>
-
-      <h1>Coop</h1>
-      <h2>Créer un compte</h2>
+      <h1>Créer un compte</h1>
       <form class="col is-offset-4" @submit.prevent="validForm">
         <label for="name">Nom : </label>
         <input type="text" id="name" v-model="name" placeholder="Nom"/>

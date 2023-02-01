@@ -11,7 +11,7 @@ pinia.use(piniaPluginPersistedstate)
 import App from './App.vue'
 import router from './router'
 import { useUserStore } from './stores/user'
-import './assets/main.css'
+// import './assets/main.css'
 
 const app = createApp(App)
 

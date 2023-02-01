@@ -1,5 +1,5 @@
 <script setup>
-
+import "../../assets/styles/components/atoms/button.scss"
 const props = defineProps({
   type: String,
   content: String,

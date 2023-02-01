@@ -1,5 +1,9 @@
+<script>
+import "../../assets/styles/components/section/nav.scss"
+</script>
+
 <template>
-  <nav>
+  <nav class="coop-nav">
     <RouterLink to="/">Home</RouterLink> |
     <RouterLink to="/about">About</RouterLink> |
     <RouterLink to="/creer-conversation">creer conversation</RouterLink> |

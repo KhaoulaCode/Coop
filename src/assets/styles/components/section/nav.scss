@@ -1,0 +1,10 @@
+@import "../../utils/variables.scss";
+@import "../../utils/mixins.scss";
+
+nav.coop-nav{
+    padding: map-get($spacing-mobile, "m" );
+
+    a{
+        color: map-get($colors, "fonts" );  
+    }
+}

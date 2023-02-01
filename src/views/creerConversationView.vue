@@ -2,7 +2,7 @@
 // import {useRouter} from 'vue-router';
 import {useSessionStore} from '@/stores/session';
 // import { reactive } from 'vue';
-
+import Button from "../components/atoms/Button.vue"
 const session = useSessionStore();
 let topic = "";
 let label = "";
@@ -24,7 +24,11 @@ const createChannel = ()=>{
         <form @submit.prevent="createChannel">
             <input type="text" v-model="topic" placeholder="Sujet">
             <input type="text" v-model="label" placeholder="Etiquette">
-            <button type="submit">Créer une conversation</button>
+            <Button
+              type="submit"
+              content="Créer une conversation"
+            />
+            <!-- <button type="submit">Créer une conversation</button> -->
         </form>
     </div>
 </template>

@@ -3,6 +3,7 @@ import { useMembresStore } from "@/stores/members";
 import { useRoute } from 'vue-router'
 import { onMounted, reactive } from "vue"
 import { useSessionStore } from '@/stores/session';
+import Post from "../components/molecules/Post.vue"
 const session = useSessionStore();
 
 
@@ -40,8 +41,11 @@ const data = reactive({
     <p>Messages : </p>
     <ul>
         <li v-for="message in data.messages">
-            <p>{{message.message}} posté par</p> 
-            <RouterLink :to="'/user/' + members.getMembre(message.member_id).id">{{members.getMembre(message.member_id).fullname }}</RouterLink>
+            <Post 
+                :message="message"
+                :drop="drop"
+                :isEditable="false"
+            />
         </li>
     </ul>
 </template>

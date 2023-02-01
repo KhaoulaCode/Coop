@@ -1,0 +1,12 @@
+@import "../../utils/variables.scss";
+@import "../../utils/mixins.scss";
+
+$padding-y-x: 10px 16px;
+
+.bi-tag{
+    background-color: map-get($brands-primary , "black" );
+    color: map-get($brands-primary , "white" );
+    padding: $padding-y-x;
+    border-radius: 20px;
+    width: fit-content;
+}

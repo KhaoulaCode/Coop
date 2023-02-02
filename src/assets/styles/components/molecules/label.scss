@@ -6,20 +6,28 @@
     margin: 0px auto;
     border-bottom: gray 0.5px solid;
     will-change: background-color ;
+    .coop-label-header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
     &:hover{
         background-color: map-get($colors, "background-dark" );
         h2{
-            
             transition: all 0.3s;
             transform: translate(10px, 10px);
             color: map-get($colors, "fonts-light" );
-
         }
         .bi-tag{
             transition: all 0.3s;
             transform: translate(10px, -10px);
             background-color: map-get($colors, "background" )!important;
             color: map-get($colors, "fonts" );
+        }
+        button{
+            transition: all 0.3s;
+            transform: translate(-10px, 10px);
 
         }
     }

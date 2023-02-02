@@ -16,13 +16,17 @@
     <router-link :to="{name: 'conversation', params: {id :channel.id}}">
         <div class="coop-label">
 
+            <div class="coop-label-header">
+
             <h2>{{channel.label}}</h2>
-            <Tag :text="channel.topic"/>
             <Button 
                 type="text"
                 content="supprimer"
                 :callBack="e=>drop(channel.id, e)"
             />
+            </div>
+            <Tag :text="channel.topic"/>
+
             
         </div>    
     </router-link>

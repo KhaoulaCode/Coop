@@ -1,5 +1,7 @@
+import router from "../router/index"
 export const useGlobal = function(){
-    const router = inject('router');
+    console.log(router)
+
     //redirection vers page de cnx
     function seConnecter(){
         router.push('/login');

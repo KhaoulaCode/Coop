@@ -40,8 +40,8 @@ const data = reactive({
     <p>Messages : </p>
     <ul>
         <li v-for="message in data.messages">
-            <p>{{message.message}} posté par</p> 
-            <RouterLink :to="'/user/' + members.getMembre(message.member_id).id">{{members.getMembre(message.member_id).fullname }}</RouterLink>
+            <p>{{message.message}} </p> 
+            <!-- <RouterLink :to="'/user/' + members.getMembre(message.member_id).id">{{members.getMembre(message.member_id).fullname }}</RouterLink> -->
         </li>
     </ul>
 </template>

@@ -1,0 +1,18 @@
+@import "../../utils/mixins.scss";
+@import "../../utils/variables.scss";
+.coop-post{
+    padding: map-get($spacing-mobile, "m" );
+    width: 100%;
+    border-bottom: gray 0.5px solid;
+
+    .post-by,a{
+
+        font-size: 14px;
+    }
+
+    h2,p{
+        color: map-get($colors, "fonts" );
+    }  
+
+    
+}

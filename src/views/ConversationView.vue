@@ -3,7 +3,11 @@ import {onMounted} from 'vue'
 import {useRoute} from 'vue-router'
 import { useSessionStore } from '@/stores/session';
 import { useMembresStore } from "@/stores/members"
-
+import Button from "../components/atoms/Button.vue"
+import Post from "../components/molecules/Post.vue"
+import CommentField from "../components/molecules/CommentField.vue"
+import Tag from "../components/atoms/Tag.vue"
+import "../assets/styles/components/pages/conversation.scss"
 const route = useRoute();
 const session = useSessionStore();
 const members = useMembresStore();
@@ -17,7 +21,6 @@ let data = reactive({
 
 
 function send(){
-    console.log(data.msg)
     api.post(`channels/${route.params.id}/posts?token=${session.connectUser.token}`,{body: {
         channel_id: route.params.id,
         member_id: session.connectUser.id,
@@ -25,6 +28,7 @@ function send(){
     }})
     .then(response =>{
         data.message.push(response)
+        window.scrollTo(0, document.body.scrollHeight);
     })
 };
  
@@ -53,15 +57,18 @@ onMounted(()=>{
 </script>
 
 <template>
-    <h1 class="title">{{data.channel.topic}}</h1>
-    <p class="subtitle">{{data.channel.label}}</p>
-    <input v-model="data.msg" type="text" placeholder="Entrez un commentaire"/>
-    <button @click="send">Envoyer</button>
-    <ul>
+    <div class="coop-light-hero">
+        <h1>{{data.channel.label}}</h1>
+        <Tag :text="data.channel.topic"/>
+    </div>
+    <ul  style="margin-bottom:100px">
         <li v-for="message in data.message">
-            <p>{{message.message}} posté par</p> 
-            <RouterLink :to="'/user/' + members.getMembre(message.member_id).id">{{members.getMembre(message.member_id).fullname }}</RouterLink>
-            <br/><button @click="()=>drop(message.id)">supprimer</button>
+            <Post 
+                :message="message"
+                :drop="drop"
+                :isEditable="true"
+            />
         </li>
     </ul>
+    <CommentField :data="data" :send="send"/>
 </template>

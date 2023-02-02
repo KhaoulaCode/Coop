@@ -1,12 +1,37 @@
 @import "../../utils/mixins.scss";
 @import "../../utils/variables.scss";
 .coop-label{
-    padding: map-get($spacing-mobile, "m" );
+    padding: map-get($spacing-mobile, "s" );
     width: 90%;
-    margin: 24px auto;
+    margin: 0px auto;
     border-bottom: gray 0.5px solid;
+    will-change: background-color ;
+    &:hover{
+        background-color: map-get($colors, "background-dark" );
+        h2{
+            
+            transition: all 0.3s;
+            transform: translate(10px, 10px);
+            color: map-get($colors, "fonts-light" );
 
-    h2,p{
+        }
+        .bi-tag{
+            transition: all 0.3s;
+            transform: translate(10px, -10px);
+            background-color: map-get($colors, "background" )!important;
+            color: map-get($colors, "fonts" );
+
+        }
+    }
+    h2{
+        transition: all 0.3s;
         color: map-get($colors, "fonts" );
+        will-change: color transform ;
+        
+        
     }  
+    .bi-tag{
+        transition: all 0.3s;
+        will-change: background-color color transform ;
+    }
 }

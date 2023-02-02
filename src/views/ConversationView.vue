@@ -38,7 +38,7 @@ function drop(id) {
         data.message = data.message.filter(function( element ) {
             return element.id !== id;
         });
-    });
+    }); 
 }
 
 onMounted(()=>{

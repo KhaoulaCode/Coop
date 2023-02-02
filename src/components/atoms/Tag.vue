@@ -5,5 +5,5 @@
     })
 </script>
 <template>
-      <div :class="'bi-tag ' + className">{{ text }}</div>
+      <div :class="'bi-tag '">{{ text }}</div>
 </template>

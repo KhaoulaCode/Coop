@@ -1,7 +1,8 @@
 import {reactive, ref} from 'vue'
 import { defineStore } from 'pinia'
-import {useGlobal}  from "./global.js"
-const g = useGlobal();
+import {useRoutes}  from "./routes.js"
+const g = useRoutes();
+console.log(g)
 export const useSessionStore = defineStore('session', () => {
   const connectUser = reactive({
     member:{},
@@ -19,7 +20,10 @@ export const useSessionStore = defineStore('session', () => {
         password: pass,
       }
     })
-    .then(response => setSession(response.member, response.token))
+    .then(response => {
+      setSession(response.member, response.token);
+      g.goBack();
+    })
   }
   
   const logout = ()=>{

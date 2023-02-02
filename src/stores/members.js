@@ -28,7 +28,6 @@ export const useMembresStore = defineStore('membres', () => {
    * @returns 
    */
   function getMembre(id) {
-    // console.log(id, state.membres)
     for (const membre of state.membres) {
       if(membre.id == id){
         return membre;

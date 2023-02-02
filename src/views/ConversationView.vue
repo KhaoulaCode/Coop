@@ -44,7 +44,6 @@ function drop(id) {
 onMounted(()=>{
     api.get(`channels/${route.params.id}?token=${session.connectUser.token}`)
     .then(response =>{
-        console.log("resp : " ,response)
         data.channel = response;
     })
 

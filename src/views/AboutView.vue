@@ -2,12 +2,7 @@
 const user = useUserStore();
 onMounted(() => {
   api.get('ping').then(response => {
-    console.log("L'api fonctionne !")
   })
-  // let member = {fullname:'ok',email:'oui@ok.fr',password:'poiutfgio'};
-  // api.post('members',{body:member}).then(response => {
-  //   console.log(response)
-  // })
 })
 </script>
 

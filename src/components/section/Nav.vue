@@ -8,14 +8,13 @@ const logout = ()=>{
   session.logout()
 }
 
-
 </script>
 
 <template>
   <nav class="coop-nav">
     <div>
       <RouterLink to="/">Home</RouterLink> |
-      <RouterLink to="/about">Liste des membres</RouterLink> |
+      <RouterLink to="/list-member">Liste des membres</RouterLink> |
       <RouterLink to="/creer-conversation">Creer conversation</RouterLink>
     </div>
     <div>

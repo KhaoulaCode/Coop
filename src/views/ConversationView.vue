@@ -28,6 +28,7 @@ function send(){
     }})
     .then(response =>{
         data.message.push(response)
+        window.scrollTo(0, document.body.scrollHeight);
     })
 };
  

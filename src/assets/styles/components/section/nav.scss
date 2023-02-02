@@ -3,7 +3,9 @@
 
 nav.coop-nav{
     padding: map-get($spacing-mobile, "m" );
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     a{
         color: map-get($colors, "fonts" );  
     }

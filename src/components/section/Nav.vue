@@ -7,17 +7,25 @@ const session = useSessionStore();
 const logout = ()=>{
   session.logout()
 }
+
+
 </script>
 
 <template>
   <nav class="coop-nav">
-    <RouterLink to="/">Home</RouterLink> |
-    <RouterLink to="/about">About</RouterLink> |
-    <RouterLink to="/creer-conversation">creer conversation</RouterLink> |
-    <RouterLink to="/login">Login</RouterLink> |
-    <RouterLink to="/register">Créer un compte</RouterLink>
-    <Button v-if="session.isValid()" type="text" content="Se déconnecter" :callBack="logout"/> 
-    <Button type="link" content="Se connecter" to="/login"/> 
-    <Button type="link" content="Créer un compte" to="/register"/> 
+    <div>
+      <RouterLink to="/">Home</RouterLink> |
+      <RouterLink to="/about">Liste des membres</RouterLink> |
+      <RouterLink to="/creer-conversation">Creer conversation</RouterLink>
+    </div>
+    <div>
+      <div v-if="session.connectUser.token">
+        <Button type="text" content="Se déconnecter" :callBack="logout"/> 
+      </div>
+      <div v-else>
+        <Button type="link" content="Se connecter" to="/login"/> 
+        <Button type="link" content="Créer un compte" to="/register"/> 
+      </div>
+    </div>
   </nav>
 </template>

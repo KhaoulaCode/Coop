@@ -3,4 +3,4 @@ Ce travail a été réalisé par :
 - Emilien VIVIER
 
 URL du dépôt Git : https://github.com/KhaoulaCode/Coop
-URL du site web sur Netlify : https://tourmaline-chaja-90bc06.netlify.app/ (Il marche pas pour l'instant)
+URL du site web : https://coop-delta.vercel.app/ (nous avons essayé avec netlify et il n'a pas marché)

@@ -7,7 +7,49 @@
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vite App</title>
-    <script src="./public/fetch.js"></script>
+    <script>
+      const api = (() => {
+    const BASE = 'https://allweb.fun/coop/api/';
+    // const API_KEY = '69094b1b6429804718c27b6695eaafe5c387ad7a';
+    const API_KEY = '8612316680b254791946e8780e3869bc5339a854';
+    function query(method, route, params) {
+        const body = params?.body;
+
+        const headers = new Headers();
+        headers.append(
+            "Authorization",
+            API_KEY
+        );
+
+
+        const request = new Request(
+            BASE + route,
+            {
+                body: JSON.stringify(body),
+                method,
+                headers
+            }
+        );
+
+        return fetch(request).then(reponse => reponse.json())
+    }
+    return {
+        get(route, params) {
+            return query('GET', route, params)
+        },
+        post(route, params) {
+            return query('POST', route, params)
+        },
+        put(route, params) {
+            return query('PUT', route, params)
+        },
+        delete(route, params) {
+            return query('DELETE', route, params)
+        },
+    }
+})();
+
+    </script>
   </head>
   <body>
     <div id="app"></div>

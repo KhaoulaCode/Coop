@@ -5,13 +5,15 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "vercel --prod"
   },
   "dependencies": {
     "pinia": "^2.0.27",
     "pinia-plugin-persistedstate": "^3.0.1",
     "sass": "^1.58.0",
     "sass-loader": "^13.2.0",
+    "vercel": "^28.15.0",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"
   },

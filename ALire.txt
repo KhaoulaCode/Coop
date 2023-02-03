@@ -1,0 +1,6 @@
+Ce travail a été réalisé par :
+- Khaoula BOULHDIR
+- Emilien VIVIER
+
+URL du dépôt Git : https://github.com/KhaoulaCode/Coop
+URL du site web sur Netlify : https://tourmaline-chaja-90bc06.netlify.app/ (Il marche pas pour l'instant)
